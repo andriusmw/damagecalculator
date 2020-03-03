@@ -1,38 +1,59 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>damage calculator</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
-    <script src="main.js"></script>
+<title>EJEMPLO DE OBTENCION DE DATOS CON JAVASCRIPT</title>
+<script type="text/javascript">
+	function obtenerdatos()
+	{
+		var ATK = document.getElementById('ATK').value;
+		var Potency = parseFloat(document.getElementById('Potency').value);
+        var DEF = document.getElementById('DEF').value;
+		var Efectivness = parseFloat(document.getElementById('Efectivness').value);
+
+		document.registro.ATKobtenido.value = ATK;
+		document.registro.Potencyobtenido.value = Potency;
+        document.registro.DEFobtenido.value = DEF;
+		document.registro.Efectivnessobtenido.value = Efectivness;
+	}
+</script>
 </head>
 <body>
-    <section>
-        This is a Damage calculator made by Matt- for the discord Digimon PVP Bravehearts. Special
-        Thanks to 
-    </section>
-    <div>
-        <form action="/action_page.php">
-            <label for="quantity">Enter Attacker's ATK Value: </label>
-            <input type="number" id="quantity" name="quantity" min="1" max="5">
-            <input type="submit" value="Submit">
+<form name="registro">
+<table>
+<tr>
+	<td>attacker's ATK:</td><td><input type="number" name="ATK" id="ATK" ></td>
+</tr>	
+<tr>
+	<td> Potency:</td><td><input type="number" name="Potency" id="Potency" ></td>
+</tr>
+<tr>
+	<td>Defender's DEF:</td><td><input type="number" name="DEF" id="DEF" ></td>
+</tr>	
+<tr>
+	<td> Efectivness:</td><td><input type="number" name="Efectivness" id="Efectivness" ></td>
+</tr>
+<tr>
+	<td><input type="button" name="btn1" value="Enviar" onclick="obtenerdatos()"></td>
+</tr>
+</table><br/><br/><br/>
+<!-- ---------------------------------------------------------------------------------->
+<!--                                                                                 -->
+<!---------------------------------------------------------------------------------- -->
+<table>
+<tr>
+	<td>attacker's ATK2</td><td><input type="number" name="ATKobtenido" id="ATKobtenido" ></td>
+</tr>	
+<tr>
+	<td>Potency2</td><td><input type="number" name="Potencyobtenido" id="Potencyobtenido" ></td>
+</tr>
+<tr>
+	<td>Defender's DEF2</td><td><input type="number" name="DEFobtenido" id="DEFobtenido" ></td>
+</tr>	
+<tr>
+	<td>Efectivness2/td><td><input type="number" name="Efectivnessobtenido" id="Efectivnessobtenido" ></td>
+</tr>
+</table>
+</form>
 
-            <label for="quantity">Enter Potency Value: </label>
-            <input type="number" id="quantity" name="quantity" min="1" max="5">
-            <input type="submit" value="Submit">
 
-            <label for="quantity">Enter Efectivness Value: </label>
-            <input type="number" id="quantity" name="quantity" min="1" max="5">
-            <input type="submit" value="Submit">
-
-            <label for="quantity">Enter  Defender's DEF value: </label>
-            <input type="number" id="quantity" name="quantity" min="1" max="5">
-            <input type="submit" value="Submit">
-          </form>
-          
-    </div>
-    
 </body>
 </html>
