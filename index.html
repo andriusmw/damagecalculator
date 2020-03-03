@@ -1,59 +1,57 @@
+
 <html>
-<head>
-<title>EJEMPLO DE OBTENCION DE DATOS CON JAVASCRIPT</title>
-<script type="text/javascript">
-	function obtenerdatos()
-	{
-		var ATK = document.getElementById('ATK').value;
-		var Potency = parseFloat(document.getElementById('Potency').value);
-        var DEF = document.getElementById('DEF').value;
-		var Efectivness = parseFloat(document.getElementById('Efectivness').value);
+	<head></head>
+    <script>
+    
+    function calcula_ATKOUTPUT(){
+	
+    var ATK = document.getElementById("ATK").value;
+	var POTENCY = document.getElementById("POTENCY").value;
+    var EFECTIVNESS = document.getElementById("EFECTIVNESS").value;
+	var DEF = document.getElementById("DEF").value;
 
-		document.registro.ATKobtenido.value = ATK;
-		document.registro.Potencyobtenido.value = Potency;
-        document.registro.DEFobtenido.value = DEF;
-		document.registro.Efectivnessobtenido.value = Efectivness;
-	}
-</script>
-</head>
-<body>
-<form name="registro">
-<table>
-<tr>
-	<td>attacker's ATK:</td><td><input type="number" name="ATK" id="ATK" ></td>
-</tr>	
-<tr>
-	<td> Potency:</td><td><input type="number" name="Potency" id="Potency" ></td>
-</tr>
-<tr>
-	<td>Defender's DEF:</td><td><input type="number" name="DEF" id="DEF" ></td>
-</tr>	
-<tr>
-	<td> Efectivness:</td><td><input type="number" name="Efectivness" id="Efectivness" ></td>
-</tr>
-<tr>
-	<td><input type="button" name="btn1" value="Enviar" onclick="obtenerdatos()"></td>
-</tr>
-</table><br/><br/><br/>
-<!-- ---------------------------------------------------------------------------------->
-<!--                                                                                 -->
-<!---------------------------------------------------------------------------------- -->
-<table>
-<tr>
-	<td>attacker's ATK2</td><td><input type="number" name="ATKobtenido" id="ATKobtenido" ></td>
-</tr>	
-<tr>
-	<td>Potency2</td><td><input type="number" name="Potencyobtenido" id="Potencyobtenido" ></td>
-</tr>
-<tr>
-	<td>Defender's DEF2</td><td><input type="number" name="DEFobtenido" id="DEFobtenido" ></td>
-</tr>	
-<tr>
-	<td>Efectivness2/td><td><input type="number" name="Efectivnessobtenido" id="Efectivnessobtenido" ></td>
-</tr>
-</table>
-</form>
+	var resultado = (1.5 * ATK * POTENCY * EFECTIVNESS / DEF);
 
+	alert ("El resultado es : " + resultado);
 
-</body>
+}
+    
+    
+    </script> 
+	
+	<body>
+
+		<form>
+				
+			<p> 
+				<b>DAMAGE CALCULATOR</b>
+				<br/><br/>
+			</p>
+			
+			Attacker's Digimon
+			<br/> 
+			<input id="ATK" type="number" />
+			<br/><br/>
+			Potency
+			<br/> 
+			<input id="POTENCY" type="number" />
+            <br/><br/>
+            Efectivness
+			<br/> 
+			<input id="EFECTIVNESS" type="number" />
+			<br/><br/>
+			Defender's DEF
+			<br/> 
+			<input id="DEF" type="number" />
+			<br/><br/>
+					
+			<input type="button" value="Calcular" onclick="calcula_ATKOUTPUT()" />
+
+		</form>
+		
+		<div id= "resultado">
+			<!-- "EL RESULTADO DE LA RESTA ES + resultado() !-->
+		</div>
+
+	</body>
 </html>
