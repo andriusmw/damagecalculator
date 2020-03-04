@@ -6,11 +6,12 @@
     function calcula_ATKOUTPUT(){
 	
     var ATK = document.getElementById("ATK").value;
+	var ModificationATK = document.getElementById("ModificationATK").value;
 	var POTENCY = document.getElementById("POTENCY").value;
     var EFECTIVNESS = document.getElementById("EFECTIVNESS").value;
 	var DEF = document.getElementById("DEF").value;
-
-	var resultado = (1.5 * ATK * POTENCY * EFECTIVNESS / DEF);
+/*------------Adjusment = ModificationATK + EFECTIVNESS -------*/
+	var resultado = (1.5 * ATK *  ModificationATK * POTENCY * EFECTIVNESS / DEF);
 
 	alert ("El resultado es : " + resultado);
 
@@ -31,6 +32,10 @@
 			Attacker's Digimon
 			<br/> 
 			<input id="ATK" type="number" />
+			<br/><br/>
+			Introduce Modification stats (IF YOU DON'T HAVE ANY BOOST OR REDUCTION TYPE "1")
+			<br/> 
+			<input id="ModificationATK" type="number" />
 			<br/><br/>
 			Potency
 			<br/> 
