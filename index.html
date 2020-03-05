@@ -7,11 +7,15 @@
 	
     var ATK = document.getElementById("ATK").value;
 	var ModificationATK = document.getElementById("ATKBOOST2").value;
+	var SS1 = document.getElementById("SS1").value;
 	var POTENCY = document.getElementById("POTENCY").value;
+	var BOOST = document.getElementById("BOOST").value; 
+	var SS2 = document.getElementById("SS2").value; 
     var EFECTIVNESS = document.getElementById("EFECTIVNESS").value;
 	var DEF = document.getElementById("DEF").value;
+	var MODDEF = document.getElementById("MODDEF").value; 
 /*------------Adjusment = ModificationATK + EFECTIVNESS -------*/
-	var resultado = (1.5 * ATK *  ModificationATK *  POTENCY * EFECTIVNESS / DEF);
+	var result = /* 1.5 * (ATK *  ModificationATK * SS1) * (POTENCY * BOOST * SS2) *  (EFECTIVNESS) / (DEF * MODDEF); */
 
 	alert ("El resultado es : " + resultado + "  atkboost:" + ModificationATK);
 	
