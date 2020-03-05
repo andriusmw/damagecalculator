@@ -39,6 +39,35 @@
 /*----------------------------FUNCIONN CALCULAR DAÑO MÁGICO / INT---------------------------*/    
 /*-                                                                                         */ 
 /*------------------------------------------------------------------------------------------*/
+function calcula_INTOUTPUT(){
+	
+    var INT = document.getElementById("INT").value;
+	var ModificationINT = document.getElementById("INTATKBOOST2").value;
+	var INTSS1 = document.getElementById("INTSS1").value;
+	var INTPOTENCY = document.getElementById("INTPOTENCY").value;
+	var INTSS2 = document.getElementById("INTSS2").value; 
+    var INTEFECTIVNESS = document.getElementById("INTEFECTIVNESS").value;
+	var INTDEF = document.getElementById("INTDEF").value;
+	var INTMODDEF = document.getElementById("INTMODDEF").value; 
+	var INTBOOST = document.getElementById("INTBOOST").value; 
+
+/*------------Adjusment = ModificationATK + EFECTIVNESS -------*/
+	var INTresult = 2.25 * (INT *  ModificationINT * INTSS1) * (INTPOTENCY * INTSS2) *  (INTEFECTIVNESS) / (INTDEF * INTMODDEF) * INTBOOST ; 
+/*thats how we calculate the fluctuator which is 0.95-1.05 */
+	var INTminimumdamage = INTresult * 0.95;
+	var INTmaximumdamage = INTresult * 1.05;
+	alert ("DAMAGE OUTPUT : " + INTresult + "MINIMUM DAMAGE = " + INTminimumdamage + "Maximum Damage = " + INTmaximumdamage);
+	alert ( "INT = " + INT);
+	alert ( "Modification INT OF ATKACKER = " + ModificationINT);
+	alert ( "Suport Skill Bonus 1 = " + INTSS1);
+	alert ( "POTENCY = " + INTPOTENCY );
+	alert ( "ss2 = " + INTSS2);
+	alert ( "efectivnes = " + INTEFECTIVNESS);
+	alert ( "DEF = " + INTDEF);
+	alert ( "MODDEF = " + INTMODDEF);
+	alert ( "BOOST = " + INTBOOST);
+   
+}
     </script> 
 	</head>
 	<body>
@@ -152,7 +181,7 @@
 			Introduce DEF Modification stats <br/> 
 			(IF YOU DON'T HAVE ANY <br/> 
 			BOOST OR REDUCTION SELECT "1")<br/>
-			<input list="MODDEF1" ID="MODDEF">
+			<input list="1MODDEF" ID="MODDEF">
 				<datalist id="1MODDEF">
 					<option value="0">
 					<option value="0.1">
@@ -204,14 +233,14 @@
 			
 			Attacker's INT VALUE
 			<br/> 
-			<input id="ATK" type="number" />
+			<input id="INT" type="number" />
 			<br/><br/>
 			Introduce Modification stats <br/>
 			(IF YOU DON'T HAVE ANY BOOST <br/> 
 			OR REDUCTION TYPE "1")
 			<br/> 
-			<input list="ATKBOOST" ID="ATKBOOST2"> <!-- de aquí va a la variable -->
-				<datalist id="ATKBOOST">  <!--el datalist id debe de ser el mismo nombre que tenga list -->
+			<input list="INTATKBOOST" ID="INTATKBOOST2"> <!-- de aquí va a la variable -->
+				<datalist id="INTATKBOOST">  <!--el datalist id debe de ser el mismo nombre que tenga list -->
 					<option value="0">    <!-- para que funcione el desplegable.-->
 					<option value="0.1">
 					<option value="0.2">
@@ -238,8 +267,8 @@
 			Introduce Suport Skill Bonus 
 			<br/>to your ATK POINTS <br/>
 			(IF YOU DON'T HAVE ANY SELECT "1") <br/>
-			<input list="SS1BONUS" ID="SS1">
-				<datalist id="SS1BONUS">	
+			<input list="INTSS1BONUS" ID="INTSS1">
+				<datalist id="INTSS1BONUS">	
   					<option value="1" type="number">
   					<option value="1.1">
 					<option value="1.15">	  
@@ -264,13 +293,13 @@
 			<br/><br/>
 			Potency
 			<br/> 
-			<input id="POTENCY" type="number" />
+			<input id="INTPOTENCY" type="number" />
 			<br/><br/>
 			Introduce Suport Skill Bonus to the <br/> 
 			Potency of the Attack (IF YOU <br/> 
 			DON'T HAVE ANY SELECT "1") <br/>
-			<input list="SS2BONUS" ID="SS2">
-				<datalist id="SS2BONUS">	
+			<input list="INTSS2BONUS" ID="INTSS2">
+				<datalist id="INTSS2BONUS">	
   					<option value="1" type="number">
   					<option value="1.1">
 					<option value="1.15">	  
@@ -295,17 +324,17 @@
 			<br/><br/>
             Efectivness
 			<br/> 
-			<input id="EFECTIVNESS" type="number" />
+			<input id="INTEFECTIVNESS" type="number" />
 			<br/><br/>
 			Defender's DEF
 			<br/> 
-			<input id="DEF" type="number" />
+			<input id="INTDEF" type="number" />
 			<br/><br/>
 			Introduce DEF Modification stats <br/> 
 			(IF YOU DON'T HAVE ANY <br/> 
 			BOOST OR REDUCTION SELECT "1")<br/>
-			<input list="MODDEF1" ID="MODDEF">
-				<datalist id="1MODDEF">
+			<input list="INTMODDEF1" ID="INTMODDEF">
+				<datalist id="INTMODDEF1">
 					<option value="0">
 					<option value="0.1">
 					<option value="0.2">
@@ -331,8 +360,8 @@
 			<br/><br/>
 			¿Acceleration Boost Bonus? <br/>
 			if yes select 2 if not select 1 <br/> 
-			<input list="1BOOST" ID="BOOST">
-				<datalist id="1BOOST">	
+			<input list="INT1BOOST" ID="INTBOOST">
+				<datalist id="INT1BOOST">	
   					<option value="1" type="number">
   					<option value="2.0">	  
 				</datalist>
