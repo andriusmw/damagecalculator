@@ -17,8 +17,10 @@
 
 /*------------Adjusment = ModificationATK + EFECTIVNESS -------*/
 	var result = 1.5 * (ATK *  ModificationATK * SS1) * (POTENCY * SS2) *  (EFECTIVNESS) / (DEF * MODDEF) * BOOST ; 
-
-	alert ("El resultado es : " + result);
+/*thats how we calculate the fluctuator which is 0.95-1.05 */
+	var minimumdamage = result * 0.95;
+	var maximumdamage = result * 1.05;
+	alert ("DAMAGE OUTPUT : " + result + "MINIMUM DAMAGE = " + minimumdamage + "Maximum Damage = " + maximumdamage);
 	alert ( "ATK = " + ATK);
 	alert ( "Modification ATK = " + ModificationATK);
 	alert ( "Suport Skill Bonus 1 = " + SS1);
