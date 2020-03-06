@@ -17,10 +17,11 @@
     var EFECTIVNESS = document.getElementById("EFECTIVNESS").value;
 	var DEF = document.getElementById("DEF").value;
 	var MODDEF = document.getElementById("MODDEF").value; 
+	var DXITEM = document.getElementById("DXITEM").value; 
 	var BOOST = document.getElementById("BOOST").value; 
 
 /*------------Adjusment = ModificationATK + EFECTIVNESS -------*/
-	var result = 1.5 * (ATK *  ModificationATK * SS1) * (POTENCY * SS2) *  (EFECTIVNESS) / (DEF * MODDEF) * BOOST ; 
+	var result = 1.5 * (ATK *  ModificationATK * SS1) * (POTENCY * SS2) *  (EFECTIVNESS) / (DEF * MODDEF) * DXITEM * BOOST ; 
 /*thats how we calculate the fluctuator which is 0.95-1.05 */
 	var minimumdamage = result * 0.95;
 	var maximumdamage = result * 1.05;
@@ -33,6 +34,7 @@
 	alert ( "efectivnes = " + EFECTIVNESS);
 	alert ( "DEF = " + DEF);
 	alert ( "MODDEF = " + MODDEF);
+	alert ( "DXITEM =  " + DXITEM);
 	alert ( "BOOST = " + BOOST);
 
 }
@@ -49,23 +51,25 @@ function calcula_INTOUTPUT(){
     var INTEFECTIVNESS = document.getElementById("INTEFECTIVNESS").value;
 	var INTDEF = document.getElementById("INTDEF").value;
 	var INTMODDEF = document.getElementById("INTMODDEF").value; 
+	var INTDXITEM = document.getElementById("INTDXITEM").value;
 	var INTBOOST = document.getElementById("INTBOOST").value; 
 
 /*------------Adjusment = ModificationATK + EFECTIVNESS -------*/
-	var INTresult = 2.25 * (INT *  ModificationINT * INTSS1) * (INTPOTENCY * INTSS2) *  (INTEFECTIVNESS) / (INTDEF * INTMODDEF) * INTBOOST ; 
+	var INTresult = 2.25 * (INT *  ModificationINT * INTSS1) * (INTPOTENCY * INTSS2) *  (INTEFECTIVNESS) / (INTDEF * INTMODDEF) * INTDXITEM * INTBOOST ; 
 /*thats how we calculate the fluctuator which is 0.95-1.05 */
 	var INTminimumdamage = INTresult * 0.95;
 	var INTmaximumdamage = INTresult * 1.05;
 	alert ("DAMAGE OUTPUT : " + INTresult + "MINIMUM DAMAGE = " + INTminimumdamage + "Maximum Damage = " + INTmaximumdamage);
 	alert ( "INT = " + INT);
 	alert ( "Modification INT OF ATKACKER = " + ModificationINT);
-	alert ( "Suport Skill Bonus 1 = " + INTSS1);
-	alert ( "POTENCY = " + INTPOTENCY );
-	alert ( "ss2 = " + INTSS2);
-	alert ( "efectivnes = " + INTEFECTIVNESS);
-	alert ( "DEF = " + INTDEF);
-	alert ( "MODDEF = " + INTMODDEF);
-	alert ( "BOOST = " + INTBOOST);
+	alert ( "INTSuport Skill Bonus 1 = " + INTSS1);
+	alert ( "INTPOTENCY = " + INTPOTENCY );
+	alert ( "INTss2 = " + INTSS2);
+	alert ( "INTefectivnes = " + INTEFECTIVNESS);
+	alert ( "INTDEF = " + INTDEF);
+	alert ( "INTMODDEF = " + INTMODDEF);
+	alert ("INTDXITEM = " + INTDXITEM);
+	alert ( "INTBOOST = " + INTBOOST);
    
 }
     </script> 
@@ -204,6 +208,33 @@ function calcula_INTOUTPUT(){
 					<option value="1.8">
 					<option value="1.9">
 					<option value="2.0">	  
+				</datalist>
+			<br/><br/>
+			¿DAMAGE REDUCTION ITEM? <br/>
+			INDICATE THE TOTAL AMOUNT OF REDUCTION <br/> 
+			IF nothing just type  1 <br/>
+			<input list="1DXITEM" ID="DXITEM">
+				<datalist id="1DXITEM">	
+					<option value="0" type="number">
+					<option value="0.1">
+					<option value="0.15">	  
+					<option value="0.2">
+					<option value="0.25">	  
+					<option value="0.3">
+					<option value="0.35">	  
+					<option value="0.4">
+					  <option value="0.45">	  
+					  <option value="0.5">
+					  <option value="0.55">	
+					  <option value="0.6">
+					  <option value="0.65">			
+					  <option value="0.7">
+					  <option value="0.75">		
+					  <option value="0.8">
+					  <option value="0.85">			
+					  <option value="0.9">
+					  <option value="0.95">			
+					  <option value="1">	  
 				</datalist>
 			<br/><br/>
 			¿Acceleration Boost Bonus? <br/>
@@ -356,6 +387,33 @@ function calcula_INTOUTPUT(){
 					<option value="1.8">
 					<option value="1.9">
 					<option value="2.0">	  
+				</datalist>
+			<br/><br/>
+			¿DAMAGE REDUCTION ITEM? <br/>
+			INDICATE THE TOTAL AMOUNT OF REDUCTION <br/> 
+			IF nothing just type  1 <br/>
+			<input list="1INTDXITEM" ID="INTDXITEM">
+				<datalist id="1INTDXITEM">	
+					<option value="0" type="number">
+					<option value="0.1">
+					<option value="0.15">	  
+					<option value="0.2">
+					<option value="0.25">	  
+					<option value="0.3">
+					<option value="0.35">	  
+					<option value="0.4">
+					  <option value="0.45">	  
+					  <option value="0.5">
+					  <option value="0.55">	
+					  <option value="0.6">
+					  <option value="0.65">			
+					  <option value="0.7">
+					  <option value="0.75">		
+					  <option value="0.8">
+					  <option value="0.85">			
+					  <option value="0.9">
+					  <option value="0.95">			
+					  <option value="1">	  
 				</datalist>
 			<br/><br/>
 			¿Acceleration Boost Bonus? <br/>
