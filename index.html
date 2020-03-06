@@ -69,9 +69,47 @@ function calcula_INTOUTPUT(){
 	alert ( "INTDEF = " + INTDEF);
 	alert ( "INTMODDEF = " + INTMODDEF);
 	alert ("INTDXITEM = " + INTDXITEM);
-	alert ( "INTBOOST = " + INTBOOST);
-   
+	alert ( "INTBOOST = " + INTBOOST); 
+
 }
+
+/*--------------------------FUNCIONN CALCULAR PENETRATING DAMAGE----------------------------*/    
+/*-                                                                                         */ 
+/*------------------------------------------------------------------------------------------*/
+function calcula_PENETRATINGOUTPUT(){
+	
+    var PENETRATINGATK = document.getElementById("PENETRATINGATK").value;
+	var PENETRATINGATKBOOST = document.getElementById("PENETRATINGATKBOOST2").value;
+	var PENETRATINGSS1BONUS = document.getElementById("PENETRATINGSS1BONUS1").value;
+	var PENETRATINGPOTENCY = document.getElementById("PENETRATINGPOTENCY").value;
+	var PENETRATINGSS2BONUS = document.getElementById("PENETRATINGSS2BONUS2").value; 
+    var PENETRATINGEFECTIVNESS = document.getElementById("PENETRATINGEFECTIVNESS").value;
+
+	var PENETRATINGDXITEM = document.getElementById("PENETRATINGDXITEM").value;
+	var PENETRATINGBOOST = document.getElementById("PENETRATINGBOOST").value; 
+
+/*------------Adjusment = ModificationATK + EFECTIVNESS -------*/
+	var PENETRATINGresult = (PENETRATINGATK *  PENETRATINGATKBOOST * PENETRATINGSS1BONUS) * (PENETRATINGPOTENCY * PENETRATINGSS2BONUS) *  (PENETRATINGEFECTIVNESS) * PENETRATINGDXITEM * PENETRATINGBOOST ; 
+/*thats how we calculate the fluctuator which is 0.95-1.05 */
+	var PENETRATINGminimumdamage = PENETRATINGresult * 0.95;
+	var PENETRATINGmaximumdamage = PENETRATINGresult * 1.05;
+	alert ("DAMAGE OUTPUT : " + PENETRATINGresult + "MINIMUM DAMAGE = " + PENETRATINGminimumdamage + "Maximum Damage = " + PENETRATINGmaximumdamage);
+	alert ( "PENETRATING ATK/ INT = " + PENETRATINGATK);
+	alert ( "Modification STATS OF ATKACKER = " + PENETRATINGATKBOOST);
+	alert ( "Suport Skill Bonus 1 TO STATS = " + PENETRATINGSS1BONUS);
+	alert ( "PENETRATING POTENCY = " + PENETRATINGPOTENCY );
+	alert ( "Support Skill bonus 2 to Attack type/potency = " + PENETRATINGSS2BONUS);
+	alert ( "PENETRATING Efectivnes = " + PENETRATINGEFECTIVNESS);
+/*	alert ( "INTDEF = " + INTDEF);
+	alert ( "INTMODDEF = " + INTMODDEF);  */
+	alert ("PENETRATINGDXITEM = " + PENETRATINGDXITEM);
+	alert ( "PENETRATINGBOOST = " + PENETRATINGBOOST);
+
+   
+
+			}
+
+
     </script> 
 	</head>
 	<body>
@@ -429,8 +467,156 @@ function calcula_INTOUTPUT(){
 
 		</form>
 		
-</DIV>		
-		
+</DIV>	
+
+<!--------------------------------------------------------------------------------------------------->
+<!--                               PENETRATING ATTTACKS                                            -->
+<!------------------------------------------------------------------------------------------------ -->
+
+<DIV style="float: left;background-color: darkcyan;">
+	<form>
+			
+		<p> 
+			<b>PENETRATING DAMAGE CALCULATOR</b>  <!-- falta editar la formula y ordenar + penetrating attacks -->
+			<br/><br/>                    <!-- recuerda el float:left-->
+		</p>
+			
+			Attacker's INT/ATK VALUE
+			<br/> 
+			<input id="PENETRATINGATK" type="number" />
+			<br/><br/>
+			Introduce Modification stats <br/>
+			(IF YOU DON'T HAVE ANY BOOST <br/> 
+			OR REDUCTION TYPE "1")
+			<br/> 
+			<input list="PENETRATINGATKBOOST" ID="PENETRATINGATKBOOST2"> <!-- de aquí va a la variable -->
+				<datalist id="PENETRATINGATKBOOST">  <!--el datalist id debe de ser el mismo nombre que tenga list -->
+					<option value="0">    <!-- para que funcione el desplegable.-->
+					<option value="0.1">
+					<option value="0.2">
+					<option value="0.3">
+					<option value="0.4">
+					<option value="0.5">
+					<option value="0.6">
+					<option value="0.7">
+					<option value="0.8">
+					<option value="0.9">
+  					<option value="1" type="number">
+  					<option value="1.1">
+  					<option value="1.2">
+  					<option value="1.3">
+  					<option value="1.4">
+					<option value="1.5">
+					<option value="1.6">
+					<option value="1.7">
+					<option value="1.8">
+					<option value="1.9">
+					<option value="2.0">	  
+				</datalist>
+			<br/><br/>
+			Introduce Suport Skill Bonus 
+			<br/>to your ATK POINTS <br/>
+			(IF YOU DON'T HAVE ANY SELECT "1") <br/>
+			<input list="PENETRATINGSS1BONUS" ID="PENETRATINGSS1BONUS1">
+				<datalist id="PENETRATINGSS1BONUS">	
+  					<option value="1" type="number">
+  					<option value="1.1">
+					<option value="1.15">	  
+  					<option value="1.2">
+					<option value="1.25">	  
+  					<option value="1.3">
+					<option value="1.35">	  
+  					<option value="1.4">
+					<option value="1.45">	  
+					<option value="1.5">
+					<option value="1.55">	
+					<option value="1.6">
+					<option value="1.65">			
+					<option value="1.7">
+					<option value="1.75">		
+					<option value="1.8">
+					<option value="1.85">			
+					<option value="1.9">
+					<option value="1.95">			
+					<option value="2.0">	  
+				</datalist>
+			<br/><br/>
+			Potency <br/>(IF medium type 1 )<br/>
+			IF STRONG TYPE 1.8 <BR/>
+			IF EXTRA STRONG TYPE 2.5 <BR/>
+			<br/> 
+			<input id="PENETRATINGPOTENCY" type="number" />
+			<br/><br/>
+			Introduce Suport Skill Bonus to the <br/> 
+			Potency of the Attack (IF YOU <br/> 
+			DON'T HAVE ANY SELECT "1") <br/>
+			<input list="PENETRATINGSS2BONUS" ID="PENETRATINGSS2BONUS2">
+				<datalist id="PENETRATINGSS2BONUS">	
+  					<option value="1" type="number">
+  					<option value="1.1">
+					<option value="1.15">	  
+  					<option value="1.2">
+					<option value="1.25">	  
+  					<option value="1.3">
+					<option value="1.35">	  
+  					<option value="1.4">
+					<option value="1.45">	  
+					<option value="1.5">
+					<option value="1.55">	
+					<option value="1.6">
+					<option value="1.65">			
+					<option value="1.7">
+					<option value="1.75">		
+					<option value="1.8">
+					<option value="1.85">			
+					<option value="1.9">
+					<option value="1.95">			
+					<option value="2.0">	  
+				</datalist>
+			<br/><br/>
+            Efectivness  <!-- PONER DESPLEGABLE -->
+			<br/> 
+			<input id="PENETRATINGEFECTIVNESS" type="number" />
+			<br/><br/>
+			¿DAMAGE REDUCTION ITEM? <br/>
+			INDICATE THE TOTAL AMOUNT OF REDUCTION <br/> 
+			IF nothing just type  1 <br/>
+			<input list="1PENETRATINGDXITEM" ID="PENETRATINGDXITEM">
+				<datalist id="1PENETRATINGDXITEM">	
+					<option value="0" type="number">
+					<option value="0.1">
+					<option value="0.15">	  
+					<option value="0.2">
+					<option value="0.25">	  
+					<option value="0.3">
+					<option value="0.35">	  
+					<option value="0.4">
+					  <option value="0.45">	  
+					  <option value="0.5">
+					  <option value="0.55">	
+					  <option value="0.6">
+					  <option value="0.65">			
+					  <option value="0.7">
+					  <option value="0.75">		
+					  <option value="0.8">
+					  <option value="0.85">			
+					  <option value="0.9">
+					  <option value="0.95">			
+					  <option value="1">	  
+				</datalist>
+			<br/><br/>
+			¿Acceleration Boost Bonus? <br/>
+			if yes select 2 if not select 1 <br/> 
+			<input list="PENETRATING1BOOST" ID="PENETRATINGBOOST">
+				<datalist id="PENETRATING1BOOST">	
+  					<option value="1" type="number">
+  					<option value="2.0">	  
+				</datalist>
+			<br/><br/>
+
+			<input type="button" value="Calcular" onclick="calcula_PENETRATINGOUTPUT()" />
+
+			</form>
 
 	</body>
 </html>
