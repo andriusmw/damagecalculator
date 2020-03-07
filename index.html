@@ -126,10 +126,10 @@ function calcula_PENETRATINGOUTPUT(){
 	var FLUCBOOST = document.getElementById("FLUCBOOST").value; 
 
 /*------------Adjusment = ModificationATK + EFECTIVNESS -------*/
-	var FLUCresult = 1.5 * (FlUCATK *  FLUCModificationATK * FLUCSS1) * (FLUCPOTENCY * FLUCSS2) *  (FLUCEFECTIVNESS) / (FLUCDEF * FLUCMODDEF) * FLUCDXITEM * FLUCBOOST ; 
+	var FLUCresult = 1.5 * (FLUCATK *  FLUCModificationATK * FLUCSS1) * (FLUCPOTENCY * FLUCSS2) *  (FLUCEFECTIVNESS) / (FLUCDEF * FLUCMODDEF) * FLUCDXITEM * FLUCBOOST ; 
 /*thats how we calculate the fluctuator which is 0.95-1.05 */
-	var FLUCminimumdamage = result * 0.5;
-	var FLUCmaximumdamage = result * 1.5;
+	var FLUCminimumdamage = FLUCresult * 0.5;
+	var FLUCmaximumdamage = FLUCresult * 1.5;
 	alert ("DAMAGE OUTPUT : " + FLUCresult + "MINIMUM DAMAGE = " + FLUCminimumdamage + "Maximum Damage = " + FLUCmaximumdamage);
 	alert ( "ATK = " + FLUCATK);
 	alert ( "Modification ATK = " + FLUCModificationATK);
@@ -672,14 +672,14 @@ function calcula_PENETRATINGOUTPUT(){
 		
 		Attacker's ATK Digimon
 		<br/> 
-		<input id="ATK" type="number" />
+		<input id="FLUCATK" type="number" />
 		<br/><br/>
 		Introduce Modification stats <br/>
 		(IF YOU DON'T HAVE ANY BOOST <br/> 
 		OR REDUCTION TYPE "1")
 		<br/> 
-		<input list="ATKBOOST" ID="ATKBOOST2"> <!-- de aquí va a la variable -->
-			<datalist id="ATKBOOST">  <!--el datalist id debe de ser el mismo nombre que tenga list -->
+		<input list="FLUCATKBOOST" ID="FLUCATKBOOST2"> <!-- de aquí va a la variable -->
+			<datalist id="FLUCATKBOOST">  <!--el datalist id debe de ser el mismo nombre que tenga list -->
 				<option value="0">    <!-- para que funcione el desplegable.-->
 				<option value="0.1">
 				<option value="0.2">
@@ -706,8 +706,8 @@ function calcula_PENETRATINGOUTPUT(){
 		Introduce Suport Skill Bonus 
 		<br/>to your ATK POINTS <br/>
 		(IF YOU DON'T HAVE <br/>ANY SELECT "1") <br/>
-		<input list="SS1BONUS" ID="SS1">
-			<datalist id="SS1BONUS">	
+		<input list="FLUCSS1BONUS" ID="FLUCSS1">
+			<datalist id="FLUCSS1BONUS">	
 				  <option value="1" type="number">
 				  <option value="1.1">
 				<option value="1.15">	  
@@ -732,13 +732,13 @@ function calcula_PENETRATINGOUTPUT(){
 		<br/><br/>
 		Potency
 		<br/> 
-		<input id="POTENCY" type="number" />
+		<input id="FLUCPOTENCY" type="number" />
 		<br/><br/>
 		Introduce Suport Skill Bonus to the <br/> 
 		Potency of the Attack (IF YOU <br/> 
 		DON'T HAVE ANY SELECT "1") <br/>
-		<input list="SS2BONUS" ID="SS2">
-			<datalist id="SS2BONUS">	
+		<input list="FLUCSS2BONUS" ID="FLUCSS2">
+			<datalist id="FLUCSS2BONUS">	
 				  <option value="1" type="number">
 				  <option value="1.1">
 				<option value="1.15">	  
@@ -763,17 +763,17 @@ function calcula_PENETRATINGOUTPUT(){
 		<br/><br/>
 		Efectivness
 		<br/> 
-		<input id="EFECTIVNESS" type="number" />
+		<input id="FLUCEFECTIVNESS" type="number" />
 		<br/><br/>
 		Defender's DEF
 		<br/> 
-		<input id="DEF" type="number" />
+		<input id="FLUCDEF" type="number" />
 		<br/><br/>
 		Introduce DEF Modification stats <br/> 
 		(IF YOU DON'T HAVE ANY <br/> 
 		BOOST OR REDUCTION <br/>SELECT "1")<br/>
-		<input list="1MODDEF" ID="MODDEF">
-			<datalist id="1MODDEF">
+		<input list="FLUC1MODDEF" ID="FLUCMODDEF">
+			<datalist id="FLUC1MODDEF">
 				<option value="0">
 				<option value="0.1">
 				<option value="0.2">
@@ -800,8 +800,8 @@ function calcula_PENETRATINGOUTPUT(){
 		¿DAMAGE REDUCTION ITEM? <br/>
 		INDICATE THE TOTAL AMOUNT <br/>OF REDUCTION <br/> 
 		IF nothing just type  1 <br/>
-		<input list="1DXITEM" ID="DXITEM">
-			<datalist id="1DXITEM">	
+		<input list="FLUC1DXITEM" ID="FLUCDXITEM">
+			<datalist id="FLUC1DXITEM">	
 				<option value="0" type="number">
 				<option value="0.1">
 				<option value="0.15">	  
@@ -826,16 +826,25 @@ function calcula_PENETRATINGOUTPUT(){
 		<br/><br/>
 		¿Acceleration Boost Bonus? <br/>
 		if yes select 2 if not select 1 <br/> 
-		<input list="1BOOST" ID="BOOST">
-			<datalist id="1BOOST">	
+		<input list="FLUC1BOOST" ID="FLUCBOOST">
+			<datalist id="FLUC1BOOST">	
 				  <option value="1" type="number">
 				  <option value="2.0">	  
 			</datalist>
 		<br/><br/>
 
-		<input type="button" value="Calcular" onclick="calcula_ATKOUTPUT()" />
+		<input type="button" value="Calculate" onclick="calcula_FLUCATKOUTPUT()" />
 
 	</form>
-</DIV>			
+</DIV>
+
+
+
+
+
+
+
+
+
 	</body>
 </html>
