@@ -19,9 +19,10 @@
 	var MODDEF = document.getElementById("MODDEF").value; 
 	var DXITEM = document.getElementById("DXITEM").value; 
 	var BOOST = document.getElementById("BOOST").value; 
+	var ATKINCREMENTSUPPORT = document.getElementById("5INCREMENTSUPPORT5").value;
 
 /*------------Adjusment = ModificationATK + EFECTIVNESS -------*/
-	var result = 1.5 * (ATK *  ModificationATK * SS1) * (POTENCY * SS2) *  (EFECTIVNESS) / (DEF * MODDEF) * DXITEM * BOOST ; 
+	var result = 1.5 * (ATK *  ModificationATK * SS1) * (POTENCY * SS2) *  (EFECTIVNESS) / (DEF * MODDEF) * DXITEM * BOOST * ATKINCREMENTSUPPORT; 
 /*thats how we calculate the fluctuator which is 0.95-1.05 */
 	var minimumdamage = result * 0.95;
 	var maximumdamage = result * 1.05;
@@ -36,6 +37,7 @@
 	alert ( "MODDEF = " + MODDEF);
 	alert ( "DXITEM =  " + DXITEM);
 	alert ( "BOOST = " + BOOST);
+	alert ( "ATKINCREMENTSUPPORT = " + ATKINCREMENTSUPPORT);
 
 }
 /*----------------------------FUNCIONN CALCULAR DAÑO MÁGICO / INT---------------------------*/    
@@ -53,9 +55,10 @@ function calcula_INTOUTPUT(){
 	var INTMODDEF = document.getElementById("INTMODDEF").value; 
 	var INTDXITEM = document.getElementById("INTDXITEM").value;
 	var INTBOOST = document.getElementById("INTBOOST").value; 
+	var INTINCREMENTSUPPORT = document.getElementById("4INCREMENTSUPPORT4").value; 
 
 /*------------Adjusment = ModificationATK + EFECTIVNESS -------*/
-	var INTresult = 2.25 * (INT *  ModificationINT * INTSS1) * (INTPOTENCY * INTSS2) *  (INTEFECTIVNESS) / (INTDEF * INTMODDEF) * INTDXITEM * INTBOOST ; 
+	var INTresult = 2.25 * (INT *  ModificationINT * INTSS1) * (INTPOTENCY * INTSS2) *  (INTEFECTIVNESS) / (INTDEF * INTMODDEF) * INTDXITEM * INTBOOST * INTINCREMENTSUPPORT ; 
 /*thats how we calculate the fluctuator which is 0.95-1.05 */
 	var INTminimumdamage = INTresult * 0.95;
 	var INTmaximumdamage = INTresult * 1.05;
@@ -69,7 +72,8 @@ function calcula_INTOUTPUT(){
 	alert ( "INTDEF = " + INTDEF);
 	alert ( "INTMODDEF = " + INTMODDEF);
 	alert ("INTDXITEM = " + INTDXITEM);
-	alert ( "INTBOOST = " + INTBOOST); 
+	alert ( "INTBOOST = " + INTBOOST);
+	alert ( "INTINCREMENTSUPPORT = " + INTINCREMENTSUPPORT); 
 
 }
 
@@ -87,9 +91,10 @@ function calcula_PENETRATINGOUTPUT(){
 
 	var PENETRATINGDXITEM = document.getElementById("PENETRATINGDXITEM").value;
 	var PENETRATINGBOOST = document.getElementById("PENETRATINGBOOST").value; 
+	var PENEINCREMENTSUPPORT = document.getElementById("3INCREMENTSUPPORT3").value; 
 
 /*------------Adjusment = ModificationATK + EFECTIVNESS -------*/
-	var PENETRATINGresult = (PENETRATINGATK *  PENETRATINGATKBOOST * PENETRATINGSS1BONUS) * (PENETRATINGPOTENCY * PENETRATINGSS2BONUS) *  (PENETRATINGEFECTIVNESS) * PENETRATINGDXITEM * PENETRATINGBOOST ; 
+	var PENETRATINGresult = (PENETRATINGATK *  PENETRATINGATKBOOST * PENETRATINGSS1BONUS) * (PENETRATINGPOTENCY * PENETRATINGSS2BONUS) *  (PENETRATINGEFECTIVNESS) * PENETRATINGDXITEM * PENETRATINGBOOST * PENEINCREMENTSUPPORT ; 
 /*thats how we calculate the fluctuator which is 0.95-1.05 */
 	var PENETRATINGminimumdamage = PENETRATINGresult * 0.95;
 	var PENETRATINGmaximumdamage = PENETRATINGresult * 1.05;
@@ -104,6 +109,7 @@ function calcula_PENETRATINGOUTPUT(){
 	alert ( "INTMODDEF = " + INTMODDEF);  */
 	alert ("PENETRATINGDXITEM = " + PENETRATINGDXITEM);
 	alert ( "PENETRATINGBOOST = " + PENETRATINGBOOST);
+	alert ( "PENEINCREMENTSUPPORT = " + PENEINCREMENTSUPPORT);
 
    
 
@@ -124,9 +130,10 @@ function calcula_PENETRATINGOUTPUT(){
 	var FLUCMODDEF = document.getElementById("FLUCMODDEF").value; 
 	var FLUCDXITEM = document.getElementById("FLUCDXITEM").value; 
 	var FLUCBOOST = document.getElementById("FLUCBOOST").value; 
+	var FLUCINCREMENTSUPPORT = document.getElementById("2INCREMENTSUPPORT2").value; 
 
 /*------------Adjusment = ModificationATK + EFECTIVNESS -------*/
-	var FLUCresult = 1.5 * (FLUCATK *  FLUCModificationATK * FLUCSS1) * (FLUCPOTENCY * FLUCSS2) *  (FLUCEFECTIVNESS) / (FLUCDEF * FLUCMODDEF) * FLUCDXITEM * FLUCBOOST ; 
+	var FLUCresult = 1.5 * (FLUCATK *  FLUCModificationATK * FLUCSS1) * (FLUCPOTENCY * FLUCSS2) *  (FLUCEFECTIVNESS) / (FLUCDEF * FLUCMODDEF) * FLUCDXITEM * FLUCBOOST * FLUCINCREMENTSUPPORT; 
 /*thats how we calculate the fluctuator which is 0.95-1.05 */
 	var FLUCminimumdamage = FLUCresult * 0.5;
 	var FLUCmaximumdamage = FLUCresult * 1.5;
@@ -141,6 +148,7 @@ function calcula_PENETRATINGOUTPUT(){
 	alert ( "MODDEF = " + FLUCMODDEF);
 	alert ( "DXITEM =  " + FLUCDXITEM);
 	alert ( "BOOST = " + FLUCBOOST);
+	alert ( "FLUCINCREMENTSUPPORT = " + FLUCINCREMENTSUPPORT);
 
 }
 
@@ -159,9 +167,10 @@ function calcula_FLUCINTOUTPUT(){
 	var FLUCINTMODDEF = document.getElementById("FLUCINTMODDEF").value; 
 	var FLUCINTDXITEM = document.getElementById("FLUCINTDXITEM").value;
 	var FLUCINTBOOST = document.getElementById("FLUCINTBOOST").value; 
+	var FLUCINTINCREMENTSUPPORT = document.getElementById("INCREMENTSUPPORT1").value; 
 
 /*------------Adjusment = ModificationATK + EFECTIVNESS -------*/
-	var FLUCINTresult = 2.25 * (FLUCINT *  FLUCModificationINT * FLUCINTSS1) * (FLUCINTPOTENCY * FLUCINTSS2) *  (FLUCINTEFECTIVNESS) / (FLUCINTDEF * FLUCINTMODDEF) * FLUCINTDXITEM * FLUCINTBOOST ; 
+	var FLUCINTresult = 2.25 * (FLUCINT *  FLUCModificationINT * FLUCINTSS1) * (FLUCINTPOTENCY * FLUCINTSS2) *  (FLUCINTEFECTIVNESS) / (FLUCINTDEF * FLUCINTMODDEF) * FLUCINTDXITEM * FLUCINTBOOST * FLUCINTINCREMENTSUPPORT ; 
 /*thats how we calculate the fluctuator which is 0.95-1.05 */
 	var FLUCINTminimumdamage = FLUCINTresult * 0.5;
 	var FLUCINTmaximumdamage = FLUCINTresult * 1.5;
@@ -176,6 +185,7 @@ function calcula_FLUCINTOUTPUT(){
 	alert ( "INTMODDEF = " + FLUCINTMODDEF);
 	alert ("INTDXITEM = " + FLUCINTDXITEM);
 	alert ( "INTBOOST = " + FLUCINTBOOST); 
+	alert ( "FLUCINTINCREMENTSUPPORT = " + FLUCINTINCREMENTSUPPORT );
 
 }
 
@@ -183,6 +193,10 @@ function calcula_FLUCINTOUTPUT(){
     </script> 
 	</head>
 	<body>
+<header style="text-align: center;">
+		<b>DIGIMON PVP BRAVEHEARTS DAMAGE CALCULATOR</b>
+</header>
+
 <DIV style="background-color: cadetblue  ;float: left;">
 		<form>
 				
@@ -354,7 +368,55 @@ function calcula_FLUCINTOUTPUT(){
 				</datalist>
 			<br/><br/>
 
-			<input type="button" value="Calcular" onclick="calcula_ATKOUTPUT()" />
+
+			Increases damage by <br/>Support Skill of <br/>DEFENDER DIGIMON? <br/>
+			Select the total amount <br/> 
+			<input list="INCREMENTSUPPORT5" ID="5INCREMENTSUPPORT5">
+			<datalist id="INCREMENTSUPPORT5">
+				<option value="0">
+				<option value="0.1">
+					<option value="0.15">
+				<option value="0.2">
+					<option value="0.25">
+				<option value="0.3">
+					<option value="0.35">
+				<option value="0.4">
+					<option value="0.45">
+				<option value="0.5">
+					<option value="0.55">
+				<option value="0.6">
+					<option value="0.65">
+				<option value="0.7">
+					<option value="0.75">
+				<option value="0.8">
+					<option value="0.85">
+				<option value="0.9">
+					<option value="0.95">
+				  <option value="1" type="number">
+					<option value="1.05">
+				  <option value="1.1">
+					<option value="1.15">
+				  <option value="1.2">
+					<option value="1.25">
+				  <option value="1.3">
+					<option value="1.35">
+				  <option value="1.4">
+					<option value="1.45">
+				<option value="1.5">
+					<option value="1.55">
+				<option value="1.6">
+					<option value="1.65"></option>
+				<option value="1.7">
+					<option value="1.75"></option>
+				<option value="1.8">
+					<option value="1.85"></option>
+				<option value="1.9">
+					<option value="1.95"></option>
+				<option value="2.0">	  
+			</datalist>
+			<br/><br/>
+
+			<input type="button" value="Calculate" onclick="calcula_ATKOUTPUT()" />
 
 		</form>
 </DIV>	
@@ -533,7 +595,54 @@ function calcula_FLUCINTOUTPUT(){
 				</datalist>
 			<br/><br/>
 
-			<input type="button" value="Calcular" onclick="calcula_INTOUTPUT()" />
+			Increases damage by <br/>Support Skill of <br/>DEFENDER DIGIMON? <br/>
+			Select the total amount <br/> 
+			<input list="INCREMENTSUPPORT4" ID="4INCREMENTSUPPORT4">
+			<datalist id="INCREMENTSUPPORT4">
+				<option value="0">
+				<option value="0.1">
+					<option value="0.15">
+				<option value="0.2">
+					<option value="0.25">
+				<option value="0.3">
+					<option value="0.35">
+				<option value="0.4">
+					<option value="0.45">
+				<option value="0.5">
+					<option value="0.55">
+				<option value="0.6">
+					<option value="0.65">
+				<option value="0.7">
+					<option value="0.75">
+				<option value="0.8">
+					<option value="0.85">
+				<option value="0.9">
+					<option value="0.95">
+				  <option value="1" type="number">
+					<option value="1.05">
+				  <option value="1.1">
+					<option value="1.15">
+				  <option value="1.2">
+					<option value="1.25">
+				  <option value="1.3">
+					<option value="1.35">
+				  <option value="1.4">
+					<option value="1.45">
+				<option value="1.5">
+					<option value="1.55">
+				<option value="1.6">
+					<option value="1.65"></option>
+				<option value="1.7">
+					<option value="1.75"></option>
+				<option value="1.8">
+					<option value="1.85"></option>
+				<option value="1.9">
+					<option value="1.95"></option>
+				<option value="2.0">	  
+			</datalist>
+			<br/><br/>
+
+			<input type="button" value="calculate" onclick="calcula_INTOUTPUT()" />
 
 		</form>
 		
@@ -685,7 +794,54 @@ function calcula_FLUCINTOUTPUT(){
 				</datalist>
 			<br/><br/>
 
-			<input type="button" value="Calcular" onclick="calcula_PENETRATINGOUTPUT()" />
+			Increases damage by <br/>Support Skill of <br/> DEFENDER DIGIMON? <br/>
+			Select the total amount <br/> 
+			<input list="INCREMENTSUPPORT3" ID="3INCREMENTSUPPORT3">
+			<datalist id="INCREMENTSUPPORT3">
+				<option value="0">
+				<option value="0.1">
+					<option value="0.15">
+				<option value="0.2">
+					<option value="0.25">
+				<option value="0.3">
+					<option value="0.35">
+				<option value="0.4">
+					<option value="0.45">
+				<option value="0.5">
+					<option value="0.55">
+				<option value="0.6">
+					<option value="0.65">
+				<option value="0.7">
+					<option value="0.75">
+				<option value="0.8">
+					<option value="0.85">
+				<option value="0.9">
+					<option value="0.95">
+				  <option value="1" type="number">
+					<option value="1.05">
+				  <option value="1.1">
+					<option value="1.15">
+				  <option value="1.2">
+					<option value="1.25">
+				  <option value="1.3">
+					<option value="1.35">
+				  <option value="1.4">
+					<option value="1.45">
+				<option value="1.5">
+					<option value="1.55">
+				<option value="1.6">
+					<option value="1.65"></option>
+				<option value="1.7">
+					<option value="1.75"></option>
+				<option value="1.8">
+					<option value="1.85"></option>
+				<option value="1.9">
+					<option value="1.95"></option>
+				<option value="2.0">	  
+			</datalist>
+			<br/><br/>
+
+			<input type="button" value="Calculate" onclick="calcula_PENETRATINGOUTPUT()" />
 
 			</form>
 
@@ -870,6 +1026,53 @@ function calcula_FLUCINTOUTPUT(){
 			</datalist>
 		<br/><br/>
 
+		Increases damage by <br/>Support Skill of <br/> DEFENDER DIGIMON? <br/>
+		Select the total amount <br/> 
+		<input list="INCREMENTSUPPORT2" ID="2INCREMENTSUPPORT2">
+		<datalist id="INCREMENTSUPPORT2">
+			<option value="0">
+			<option value="0.1">
+				<option value="0.15">
+			<option value="0.2">
+				<option value="0.25">
+			<option value="0.3">
+				<option value="0.35">
+			<option value="0.4">
+				<option value="0.45">
+			<option value="0.5">
+				<option value="0.55">
+			<option value="0.6">
+				<option value="0.65">
+			<option value="0.7">
+				<option value="0.75">
+			<option value="0.8">
+				<option value="0.85">
+			<option value="0.9">
+				<option value="0.95">
+			  <option value="1" type="number">
+				<option value="1.05">
+			  <option value="1.1">
+				<option value="1.15">
+			  <option value="1.2">
+				<option value="1.25">
+			  <option value="1.3">
+				<option value="1.35">
+			  <option value="1.4">
+				<option value="1.45">
+			<option value="1.5">
+				<option value="1.55">
+			<option value="1.6">
+				<option value="1.65"></option>
+			<option value="1.7">
+				<option value="1.75"></option>
+			<option value="1.8">
+				<option value="1.85"></option>
+			<option value="1.9">
+				<option value="1.95"></option>
+			<option value="2.0">	  
+		</datalist>
+		<br/><br/>
+
 		<input type="button" value="Calculate" onclick="calcula_FLUCATKOUTPUT()" />
 
 	</form>
@@ -881,9 +1084,7 @@ function calcula_FLUCINTOUTPUT(){
 <!------------------------------------------------------------------------------------------------>
 
 
-<!-- CALCULADORA DAÑO MÁGICO /INT PARTE HTML  ----------------------------------------------->
-<!--                                                                                       -->
-<!------------------------------------------------------------------------------------------->
+
 <DIV style="float: left;background-color: burlywood;">
 	<form>
 			
@@ -1055,12 +1256,63 @@ function calcula_FLUCINTOUTPUT(){
 				</datalist>
 			<br/><br/>
 
+			Increases damage by <br/>Support Skill of <br/> DEFENDER DIGIMON? <br/>
+			Select the total amount <br/> 
+			<input list="INCREMENTSUPPORT" ID="INCREMENTSUPPORT1">
+			<datalist id="INCREMENTSUPPORT">
+				<option value="0">
+				<option value="0.1">
+					<option value="0.15">
+				<option value="0.2">
+					<option value="0.25">
+				<option value="0.3">
+					<option value="0.35">
+				<option value="0.4">
+					<option value="0.45">
+				<option value="0.5">
+					<option value="0.55">
+				<option value="0.6">
+					<option value="0.65">
+				<option value="0.7">
+					<option value="0.75">
+				<option value="0.8">
+					<option value="0.85">
+				<option value="0.9">
+					<option value="0.95">
+				  <option value="1" type="number">
+					<option value="1.05">
+				  <option value="1.1">
+					<option value="1.15">
+				  <option value="1.2">
+					<option value="1.25">
+				  <option value="1.3">
+					<option value="1.35">
+				  <option value="1.4">
+					<option value="1.45">
+				<option value="1.5">
+					<option value="1.55">
+				<option value="1.6">
+					<option value="1.65"></option>
+				<option value="1.7">
+					<option value="1.75"></option>
+				<option value="1.8">
+					<option value="1.85"></option>
+				<option value="1.9">
+					<option value="1.95"></option>
+				<option value="2.0">	  
+			</datalist>
+			<br/><br/>
+
 			<input type="button" value="Calculate" onclick="calcula_FLUCINTOUTPUT()" />
 
 		</form>
 		
 </DIV>	
-
+<DIV style="float: left;">
+	
+	Made by Matt-#2100 for the Digimon PVP Bravehearts Discord Server : <a href="https://discord.gg/guNKX2s" >https://discord.gg/guNKX2s</a> <br/>
+	Credits and 10.000 THANKS TO:  Chrono-Lee, Sos120547049 AND Daeuteronomy | ᐕ)⁾⁾  for the Damage formula. <br/>
+</DIV>
 
 
 
